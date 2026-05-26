@@ -163,6 +163,17 @@ function Hero({ onScroll }) {
           sem precisar se identificar. A gente leva pro debate.
         </p>
 
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.25)",
+          borderRadius: 4, padding: "8px 16px", marginTop: 4,
+          fontFamily: "var(--font-mono)", fontSize: 12,
+          letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--bone)"
+        }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--flame)", display: "inline-block" }} />
+          Sábado 30/05 às 18h · Na Sara Sergipe Sede
+        </div>
+
         <div className="hero-bottom">
           <button className="btn btn-primary btn-lg" onClick={onScroll}
                   style={{ background: "var(--ink-0)", color: "var(--bone)" }}>
@@ -291,7 +302,7 @@ function Success({ counts, onReset }) {
           {total === 1 ? "Recebemos a sua pergunta." : `Recebemos as suas ${total} perguntas.`}
           {" "}
           A gente leva o que mais ecoar pro palco do PODARENA.
-          Cola lá na sexta, 19h30.
+          Cola lá no sábado, 18h.
         </p>
 
         <div style={{
@@ -510,11 +521,11 @@ function App() {
 
       <footer className="footer">
         <div className="container footer-inner">
-          <div>© Arena · Sara Nossa Terra · Mov. Jovem</div>
+          <div>© Arena · Sara Nossa Terra</div>
           <div style={{ display: "flex", gap: 28 }}>
             <span>PODARENA · Arena Lifestyle</span>
-            <span>Brasília — DF</span>
-            <span>Sexta · 19h30</span>
+            <span>Sara Sergipe Sede</span>
+            <span>Sábado · 18h</span>
           </div>
         </div>
       </footer>
