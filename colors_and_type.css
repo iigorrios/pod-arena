@@ -1,0 +1,297 @@
+/* =========================================================================
+   ARENA DESIGN SYSTEM — colors_and_type.css
+   Tokens for the Arena (Sara Nossa Terra youth movement) brand.
+   ------------------------------------------------------------------------- */
+
+/* --- Webfonts ------------------------------------------------------------- */
+/* Sourced from Google Fonts (CDN substitutions — see README for swap notes). */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+  /* === COLOR — primary palette ========================================== */
+  /* The Arena flame. Sampled from the logo (avg solid #F76332, peak #FD460A).
+     We use a slightly punched-up tone as the canonical brand orange. */
+  --arena-flame:        #F84B1A;
+  --arena-flame-700:    #D63A0F;   /* hover / pressed */
+  --arena-flame-800:    #A52A09;   /* deep accent / outlines on light */
+  --arena-flame-300:    #FF8E66;   /* highlights, gradients */
+  --arena-flame-100:    #FFD9CC;   /* tints / surfaces on light */
+
+  /* === COLOR — neutrals (warm-black system) ============================= */
+  /* Arena's primary canvas is black. We warm it slightly so it sits next to
+     the flame without feeling clinical. */
+  --ink-0:              #050403;   /* full black, true background */
+  --ink-1:              #0F0D0B;   /* surface */
+  --ink-2:              #1A1714;   /* raised surface */
+  --ink-3:              #2A2520;   /* border on dark */
+  --ink-4:              #4A423B;   /* muted text on dark */
+  --ink-5:              #7E746A;   /* secondary text on dark */
+
+  /* Paper — warm off-white for editorial / lighter surfaces */
+  --paper-0:            #F4F1EC;   /* page bg on light */
+  --paper-1:            #E8E3DA;   /* card on light */
+  --paper-2:            #D6CFC2;   /* divider on light */
+
+  /* === COLOR — accents ================================================== */
+  --bone:               #FFFDF8;   /* near-white for type on dark */
+  --arena-maroon:       #3D0A02;   /* deep arena-floor red — for layered bg */
+  --arena-amber:        #FFB627;   /* highlight, "lit" callouts */
+  --stripe:             #FFFFFF14; /* the diagonal stripe ink (semi alpha) */
+
+  /* === SEMANTIC — surface ============================================== */
+  --bg:                 var(--ink-0);
+  --bg-elev:            var(--ink-1);
+  --bg-card:            var(--ink-2);
+  --border:             var(--ink-3);
+  --border-strong:      var(--ink-4);
+
+  /* === SEMANTIC — text ================================================== */
+  --fg:                 var(--bone);
+  --fg-muted:           var(--ink-5);
+  --fg-dim:             var(--ink-4);
+  --fg-accent:          var(--arena-flame);
+  --fg-on-flame:        var(--bone);
+
+  /* === STATUS =========================================================== */
+  --ok:                 #4FCB8B;
+  --warn:               var(--arena-amber);
+  --error:              #FF4848;
+
+  /* === TYPE — families ================================================== */
+  --font-display:       "Anton", "Bebas Neue", "Impact", sans-serif;
+  --font-sans:          "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:          "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:          "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* === TYPE — scale (1.250 major-third, rooted at 16px) ================= */
+  --fs-12:              0.75rem;    /* 12 — micro */
+  --fs-13:              0.8125rem;  /* 13 — labels */
+  --fs-14:              0.875rem;   /* 14 — small body */
+  --fs-16:              1rem;       /* 16 — body */
+  --fs-18:              1.125rem;   /* 18 — large body */
+  --fs-21:              1.3125rem;  /* 21 — h5 */
+  --fs-28:              1.75rem;    /* 28 — h4 */
+  --fs-36:              2.25rem;    /* 36 — h3 */
+  --fs-48:              3rem;       /* 48 — h2 */
+  --fs-72:              4.5rem;     /* 72 — h1 */
+  --fs-128:             8rem;       /* 128 — display */
+  --fs-200:             12.5rem;    /* 200 — hero numerals */
+
+  /* === SPACE ============================================================ */
+  --space-1:            4px;
+  --space-2:            8px;
+  --space-3:            12px;
+  --space-4:            16px;
+  --space-5:            24px;
+  --space-6:            32px;
+  --space-7:            48px;
+  --space-8:            64px;
+  --space-9:            96px;
+  --space-10:           128px;
+
+  /* === RADII — sparse. Arena prefers sharp corners. ===================== */
+  --radius-0:           0px;        /* default — sharp */
+  --radius-sm:          2px;
+  --radius-md:          6px;        /* for inputs / small cards */
+  --radius-pill:        999px;      /* for tags / chips */
+
+  /* === SHADOW =========================================================== */
+  --shadow-sm:          0 1px 0 0 rgba(0,0,0,0.4);
+  --shadow-md:          0 8px 24px -8px rgba(0,0,0,0.6);
+  --shadow-glow:        0 0 40px -10px rgba(248,75,26,0.55);
+
+  /* === MOTION =========================================================== */
+  --ease-out:           cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring:        cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:           120ms;
+  --dur-base:           220ms;
+  --dur-slow:           420ms;
+
+  /* === BRAND GRADIENT — the canonical "arena sky" gradient ============== */
+  /* Sampled directly from the Arena social-card backgrounds: warm peach in
+     the top-left, building through orange to a deep crimson bottom-right.
+     ALWAYS pair with grain — the gradient alone reads too clean. */
+  --grad-arena:
+    radial-gradient(
+      130% 130% at 20% 0%,
+      #FBC196 0%,
+      #F88248 18%,
+      #EA541C 42%,
+      #C72A14 72%,
+      #8E1A0E 100%
+    );
+  --grad-arena-soft:
+    linear-gradient(135deg, #FBC196 0%, #EA541C 50%, #8E1A0E 100%);
+
+  /* === STRIPE — signature pattern ====================================== */
+  /* The diagonal hatch from the logo. Apply as background-image. */
+  --bg-stripes-light:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 14px,
+      rgba(255,255,255,0.10) 14px 18px
+    );
+  --bg-stripes-flame:
+    repeating-linear-gradient(
+      135deg,
+      var(--arena-flame) 0 14px,
+      var(--arena-flame-700) 14px 18px
+    );
+  --bg-stripes-dark:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 14px,
+      rgba(0,0,0,0.18) 14px 18px
+    );
+
+  /* === GRAIN — film noise overlay (matches the textured fill on logo) === */
+  --grain-overlay:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* =========================================================================
+   SEMANTIC TYPE CLASSES
+   Use these as drop-in classes (or wire them to h1/h2/etc in your scope).
+   ------------------------------------------------------------------------- */
+
+.display, .t-display {
+  font-family: var(--font-display);
+  font-weight: 400;          /* Anton ships at one weight */
+  font-size: clamp(4rem, 12vw, var(--fs-200));
+  line-height: 0.82;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.h1, .t-h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7vw, var(--fs-128));
+  line-height: 0.88;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+.h2, .t-h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, var(--fs-72));
+  line-height: 0.94;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.h3, .t-h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-36);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.h4, .t-h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-28);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+
+.h5, .t-h5 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-21);
+  line-height: 1.25;
+}
+
+.eyebrow, .t-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-13);
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.body, .t-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-16);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.body-lg, .t-body-lg {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-18);
+  line-height: 1.55;
+}
+
+.body-sm, .t-body-sm {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-14);
+  line-height: 1.5;
+}
+
+.label, .t-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-12);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.verse, .t-verse {
+  /* For Bible verses. Italicized, restrained, with a hanging quote feel. */
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-21);
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+  text-wrap: balance;
+}
+
+.quote, .t-quote {
+  /* For movement slogans. Big, condensed, brave. */
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, var(--fs-72));
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* =========================================================================
+   PRIMITIVE UTILITIES
+   ------------------------------------------------------------------------- */
+
+.bg-arena    { background: var(--grad-arena); color: var(--fg); }
+.bg-flame    { background: var(--arena-flame); color: var(--fg-on-flame); }
+.bg-ink      { background: var(--ink-0); color: var(--fg); }
+.bg-paper    { background: var(--paper-0); color: var(--ink-0); }
+.bg-maroon   { background: var(--arena-maroon); color: var(--fg); }
+
+.fg-flame    { color: var(--arena-flame); }
+.fg-amber    { color: var(--arena-amber); }
+.fg-muted    { color: var(--fg-muted); }
+
+.stripes-light  { background-image: var(--bg-stripes-light); }
+.stripes-flame  { background-image: var(--bg-stripes-flame); }
+.stripes-dark   { background-image: var(--bg-stripes-dark); }
+
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: var(--grain-overlay);
+  background-size: 240px;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  pointer-events: none;
+}
